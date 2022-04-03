@@ -1,3 +1,4 @@
+// priblem: write a program that recursively generates a binary tree of fixed depth N, then prints the tree to the terminal with a stylized, branching structure.
 public class prettyBinaryTreeGenerator {
   // driver code
   public static void main(String[] args) {
