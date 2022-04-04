@@ -1,6 +1,6 @@
 // problem: given a linked list, write a method that returns the same list, reversed.
 
-public class reverseList {
+public class reverse_linked_list {
   public static void main(String[] args) {
 
     LinkedList L = new LinkedList();
