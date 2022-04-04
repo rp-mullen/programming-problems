@@ -1,16 +1,18 @@
-// priblem: write a program that recursively generates a binary tree of fixed depth N, then prints the tree to the terminal with a stylized, branching structure.
-public class prettyBinaryTreeGenerator {
+// problem: write a program that recursively generates a binary tree of fixed depth N, then prints the tree to the terminal with a stylized, branching structure.
+
+public class pretty_binary_tree_generator {
+  
   // driver code
   public static void main(String[] args) {
     int N = 5;
-    prettyBinaryTreeGenerator T = new prettyBinaryTreeGenerator(N);
+    pretty_binary_tree_generator T = new pretty_binary_tree_generator(N);
     T.print();
   }
 
   Node root;
   int depth;
 
-  public prettyBinaryTreeGenerator(int depth) {
+  public pretty_binary_tree_generator(int depth) {
     this.root = generateTree(depth);
   }
 
