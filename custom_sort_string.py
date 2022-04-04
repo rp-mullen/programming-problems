@@ -23,7 +23,6 @@ def customSortString(order, s):
         
     return result
 
-
 # given a char, produce a string of that char repeated n times        
 def charDuplicate(ch,n):
     st = ""
