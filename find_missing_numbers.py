@@ -1,6 +1,7 @@
 """
 problem: given an array of integers of size n, return the list of integers in the range [1,n] that are missing in the array.  
 """
+
 def findMissingNumbers(nums):
     # get maximum value
     maxNum = len(nums)
