@@ -8,7 +8,7 @@ function isClosed(s) {
     brkts.set('(',')');
     brkts.set('[',']');
     
-    // create running stack of open brackets and pop them when a closing bracket of the right kind is found
+    // create running stack of open brackets and pop them when a closing bracket is found
     var st = new Stack();
     for (var i = 0; i < s.length; i++) {
         var ch = s[i];
