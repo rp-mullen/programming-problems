@@ -2,7 +2,7 @@
 
 public class reverse_linked_list {
   public static void main(String[] args) {
-
+    
     LinkedList L = new LinkedList();
 
     for (int i = 0; i < 10; i++) {
@@ -11,7 +11,6 @@ public class reverse_linked_list {
 
     L.print();
     
-    // main algorithm
     L.reverse();
 
     L.print();
