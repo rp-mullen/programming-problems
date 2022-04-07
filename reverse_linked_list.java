@@ -32,7 +32,8 @@ class Node {
 // implemented linked list
 class LinkedList {
   Node head;
-
+  
+  //constructors
   public LinkedList() {
     head = null;
   }
@@ -40,6 +41,7 @@ class LinkedList {
     head = N;
   }
 
+  // add node
   public void addNode(Node N) {
     if (head == null) {
       head = N;
@@ -53,6 +55,7 @@ class LinkedList {
     }
   }
 
+  // printer function
   public void print() {
     Node tmp = head;
     while (tmp.next != null) {
@@ -62,7 +65,7 @@ class LinkedList {
     System.out.print(tmp.data + "\n");
   }
 
-  
+  // main algorithm
   public void reverse() {
     Node current = head;
     Node prev = null;
