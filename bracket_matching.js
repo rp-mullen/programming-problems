@@ -2,11 +2,14 @@
 // bracket in the string is part of a matching pair (is 'closed').
 
 function isClosed(s) {
+    // instantiate map of brackets
     const brkts = new Map();
     brkts.set('{','}');
     brkts.set('(',')');
     brkts.set('[',']');
     
+    // create running stack of open brackets and pop them when a closing bracket of the right kind
+    // is found in the correct position
     var st = new Stack();
     for (var i = 0; i < s.length; i++) {
         var ch = s[i];
@@ -29,6 +32,7 @@ function isClosed(s) {
             }
         }
     }
+    // if the stack is empty by the end of the string, all brackets have been matched and the string is "closed" (true). else, "open" (false).
     if (st.size === 0) {
         return true;
     }
@@ -37,7 +41,7 @@ function isClosed(s) {
     }
 }
 
-
+// Stack and Node classes were implemented from scratch because js has no native stack structure.
 class Node {
     constructor(data, next=null) {
         this.data = data;
@@ -104,6 +108,7 @@ class Stack {
     
 }
 
+// tests
 console.log("Input: [[]] - Output: " + isClosed("[[]]"));
 console.log("Input: [[]]] - Output: " + isClosed("[[]]]"));
 console.log("Input: ()() - Output: " + isClosed("()()"));
