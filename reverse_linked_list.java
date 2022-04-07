@@ -10,13 +10,15 @@ public class reverse_linked_list {
     }
 
     L.print();
-
+    
+    // main algorithm
     L.reverse();
 
     L.print();
   }
 }
 
+// implemented node
 class Node {
   int data;
   Node next;
@@ -27,6 +29,7 @@ class Node {
   }
 }
 
+// implemented linked list
 class LinkedList {
   Node head;
 
@@ -59,6 +62,7 @@ class LinkedList {
     System.out.print(tmp.data + "\n");
   }
 
+  
   public void reverse() {
     Node current = head;
     Node prev = null;
