@@ -2,14 +2,13 @@
 // bracket in the string is part of a matching pair (is 'closed').
 
 function isClosed(s) {
-    // instantiate map of brackets
+    // map open brackets to closed
     const brkts = new Map();
     brkts.set('{','}');
     brkts.set('(',')');
     brkts.set('[',']');
     
-    // create running stack of open brackets and pop them when a closing bracket of the right kind
-    // is found in the correct position
+    // create running stack of open brackets and pop them when a closing bracket of the right kind is found
     var st = new Stack();
     for (var i = 0; i < s.length; i++) {
         var ch = s[i];
