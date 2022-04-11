@@ -50,15 +50,17 @@ class Set {
     
 }
 
-// is T a topology of X?
+// Is T a topology of X?
 function isTopology(X,T) {
+    // print input set and candidate topology.
     console.log("X: " + X);
     console.log("T: " + stringify(T));
     console.log("--------------------------------------------------------------------------");
     
+    // (i.) T contains both X and ∅
     let conditionOne;
     let hasNull = false;
-    // (i.) X and ∅ are both in T
+    
     for (var i = 0; i < T.length; i++) {
         if (T[i].length === 0) {
             hasNull = true;
@@ -87,8 +89,7 @@ function isTopology(X,T) {
     }
     console.log("Condition (ii): Any union of sets in T is also in T : " + conditionTwo);
     
-    // (iii.) the intersection of any two sets in T is alos in T
-    
+    // (iii.) the intersection of any two sets in T is alos in T    
     let conditionThree;
     for (var i = 0; i < T.length; i++) {
         for (var j = 0; j < T.length; j++) {
