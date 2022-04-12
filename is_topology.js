@@ -1,5 +1,5 @@
-// implement a set class with union and intersection, then write a function to determine whether a set T of subsets of X
-//is a topology on X.
+// problem: implement a set methods class with union, intersection, equality, then write a function to determine whether a set T of subsets of X
+// is a topology on X.
 
 class Set {
     constructor() {
