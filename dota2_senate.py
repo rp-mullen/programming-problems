@@ -22,6 +22,7 @@ class Solution:
                     except:
                         return 'Radiant'
                     
+                    
                 if senate == 'D':
                     win = True
                     return 'Dire'
