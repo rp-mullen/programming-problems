@@ -1,54 +1,51 @@
-// problem: implement a set methods class with union, intersection, equality, then write a function to determine whether a set T of subsets of X
+// problem: implement set methods union, intersection, equality, then write a function to determine whether a set T of subsets of X
 // is a topology on X.
 
-class Set {
-    constructor() {
-    }
+
     
-    static union(S,T) {
-        var U = [];
-        for (var i = 0; i < S.length; i++) {
-            U.push(S[i]);
+function union(S,T) {
+    var U = [];
+    for (var i = 0; i < S.length; i++) {
+        U.push(S[i]);
+    }
+    for (var j = 0; j < T.length; j++) {
+        if (!U.includes(T[j])) {
+            U.push(T[j]);
         }
-        for (var j = 0; j < T.length; j++) {
-            if (!U.includes(T[j])) {
-                U.push(T[j]);
-            }
-        }
-        return U.sort();
     }
-    
-    static intersection(S,T) {
-        var I = [];
-        for (var i = 0; i < S.length; i++) {
-            for (var j = 0; j < T.length; j++) {
-                if (S.includes(T[j]) && !I.includes(T[j])) {
-                    I.push(T[j]);
-                }
-                else if (T.includes(S[i]) && !I.includes(S[i])) {
-                    I.push(S[i]);
-                }
-            }
-        }
-        
-        return I.sort();
-    }
-    
-    static equality(S,T) {
-        return S.length === T.length && S.every((val, index) => val === T[index]);
-    }
-    
-    static inclusion(A,B) {
-        var incl = false;
-        for (var i = 0; i < A.length; i++) {
-            if (this.equality(A[i],B)) {
-                incl = true;
-            }
-        }
-        return incl;
-    }
-    
+    return U.sort();
 }
+    
+function intersection(S,T) {
+    var I = [];
+    for (var i = 0; i < S.length; i++) {
+        for (var j = 0; j < T.length; j++) {
+            if (S.includes(T[j]) && !I.includes(T[j])) {
+                I.push(T[j]);
+            }
+            else if (T.includes(S[i]) && !I.includes(S[i])) {
+                I.push(S[i]);
+            }
+        }
+    }
+    return I.sort();
+}
+    
+function equality(S,T) {
+    return S.length === T.length && S.every((val, index) => val === T[index]);
+}
+    
+function inclusion(A,B) {
+    var incl = false;
+    for (var i = 0; i < A.length; i++) {
+        if (equality(A[i],B)) {
+            incl = true;
+        }
+    }
+    return incl;
+}
+    
+
 
 // Is T a topology of X?
 function isTopology(X,T) {
@@ -79,7 +76,7 @@ function isTopology(X,T) {
     let conditionTwo;
     for (var i = 0; i < T.length; i++) {
         for (var j = 0; j < T.length; j++) {
-            if (Set.inclusion(T,Set.union(T[i],T[j]))) {
+            if (inclusion(T,union(T[i],T[j]))) {
                 conditionTwo = true;
             }
             else {
@@ -93,7 +90,7 @@ function isTopology(X,T) {
     let conditionThree;
     for (var i = 0; i < T.length; i++) {
         for (var j = 0; j < T.length; j++) {
-            if (Set.inclusion(T,Set.intersection(T[i],T[j]))) {
+            if (inclusion(T,intersection(T[i],T[j]))) {
                 conditionThree = true;
             }
             else {
