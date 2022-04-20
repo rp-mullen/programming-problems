@@ -1,5 +1,5 @@
 """
-problem: implement the in-order iterator class for a binary search tree
+problem: implement an in-order iterator class for a binary search tree
 """
 
 # Definition for a binary tree node.
