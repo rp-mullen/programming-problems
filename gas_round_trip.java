@@ -11,7 +11,6 @@ class Solution {
             }
         }
         return -1;
-        
     }
     
     public int calculateRoundTrip(int[] gas, int[] cost, int i) {
